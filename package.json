@@ -5,7 +5,6 @@
   "main": "index.js",
   "author": "Pedro Henrique Castro da Silva ATACADAO SA. - @Transformação Digital - RH",
   "license": "MIT",
-  "private":"false",
   "repository": {
     "url": "PedroHenc/eslint-config-pedro"
   },
