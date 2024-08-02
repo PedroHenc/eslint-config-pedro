@@ -1,0 +1,10 @@
+{
+    "plugins": ["stylelint-prettier","stylelint-order"],
+    "ignoreFiles": ["./node_modules/**","./dist/**"],
+    "rules": {
+      "prettier/prettier": true,
+      "order/properties-alphabetical-order": true
+    }
+  }
+  
+  
