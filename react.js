@@ -1,43 +1,35 @@
-import pluginJs from '@eslint/js';
-import configStandard from 'eslint-config-standard';
-import pluginImport from 'eslint-plugin-import';
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
-import pluginN from 'eslint-plugin-n';
-import pluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import pluginPromise from 'eslint-plugin-promise';
-import pluginReact from 'eslint-plugin-react';
-import globals from 'globals';
-import tsEslint from 'typescript-eslint';
-
-const pluginStandard = {
-  plugins: {
-    n: pluginN,
-    import: pluginImport,
-    promise: pluginPromise,
-  },
-  rules: configStandard.rules,
-};
-
-export default [
-  { ignores: ['node_modules/', 'dist/'] },
-  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
-  // pluginHooks,
-  pluginStandard,
-  ...tsEslint.configs.recommended,
-  pluginPrettierRecommended,
-  {
-    settings: {
-      react: {
-        version: 'detect',
-      },
+module.exports = {
+    env: {
+      browser: true,
+      es2024: true,
+      jest: true,
     },
-    plugins: { 'jsx-a11y': pluginJsxA11y },
+    extends: [
+      'plugin:react/recommended',
+      'plugin:react-hooks/recommended',
+      'standard',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:prettier/recommended',
+    ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true
+      },
+      ecmaVersion: 'latest',
+      sourceType: 'module'
+    },
+    plugins: [
+      'react',
+      'jsx-a11y',
+      '@typescript-eslint',
+      "pluginN",
+      "pluginImport",
+      "pluginPromise"
+    ],
     rules: {
-      '@typescript-eslint/no-unused-vars': ['warn'],
-      'react/self-closing-comp': 'error',
+        '@typescript-eslint/no-unused-vars': ['warn'],
+      "react/self-closing-comp": "error",
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'warn',
       'react/jsx-key': 'warn',
@@ -47,18 +39,17 @@ export default [
       'no-constant-binary-expression': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       'react/no-unknown-property': 'error',
-      'prettier/prettier': [
-        'error',
-        {
-          printWidth: 80,
-          tabWidth: 2,
-          singleQuote: true,
-          trailingComma: 'all',
-          arrowParens: 'always',
-          endOfLine: 'auto',
-          parser: 'typescript',
-        },
-      ],
+      'prettier/prettier': ["error", {
+        'printWidth': 80,
+        'tabWidth': 2,
+        'singleQuote': true,
+        'trailingComma': 'all',
+        'arrowParens': 'always',
+        'semi': false,
+        'endOfLine': 'auto',
+      }],
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
       'jsx-a11y/alt-text': [
         'warn',
         {
@@ -66,11 +57,12 @@ export default [
           img: ['Image'],
         },
       ],
-      'jsx-a11y/aria-props': 'warn',
+    'jsx-a11y/aria-props': 'warn',
       'jsx-a11y/aria-proptypes': 'warn',
       'jsx-a11y/aria-unsupported-elements': 'warn',
       'jsx-a11y/role-has-required-aria-props': 'warn',
       'jsx-a11y/role-supports-aria-props': 'warn',
+      'react/no-unknown-property': 'error',
       'import/order': [
         'warn',
         {
@@ -102,8 +94,15 @@ export default [
         },
       ],
     },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+      'import/parsers': {
+        [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+      },
+    },
     ignorePatterns: [
       'node_modules'
-    ],
-  },
-];
+    ]
+  }
