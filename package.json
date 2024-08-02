@@ -4,25 +4,20 @@
   "description": "configuração padrão para o eslint-prettier utilizada por @pedrohenC @usolivre",
   "main": "index.js",
   "author": "Pedro Henrique Castro da Silva ATACADAO SA. - @Transformação Digital - RH",
-  "license": "MIT",
+  "license": " ",
   "type": "module",
   "repository": {
     "url": "PedroHenc/eslint-config-pedro"
   },
-  "peerDependencies": {
-    "eslint": "^8.0.0",
-    "typescript": ">=5"
-  },
-  "peerDependenciesMeta": {
-    "typescript": {
-      "optional": true
-    }
+  "scripts": {
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "dependencies": {
     "@eslint/js": "^9.7.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "eslint": "^9.8.0",
+    "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",
@@ -37,7 +32,6 @@
     "stylelint": "^16.7.0",
     "stylelint-order": "^6.0.4",
     "stylelint-prettier": "^5.0.2",
-    "typescript-eslint": "^7.17.0",
-    "update": "^0.7.4"
+    "typescript-eslint": "^7.17.0"
   }
 }
