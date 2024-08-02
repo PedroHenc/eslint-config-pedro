@@ -102,5 +102,8 @@ export default [
         },
       ],
     },
+    ignorePatterns: [
+      'node_modules'
+    ],
   },
 ];
