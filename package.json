@@ -1,9 +1,9 @@
 {
   "name": "@pedrohenc/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "configuração padrão para o eslint-prettier utilizada por @pedrohenC @usolivre",
   "main": "index.js",
-    "author": "Pedro Henrique Castro da Silva ATACADAO SA. - @Transformação Digital - RH",
+  "author": "Pedro Henrique Castro da Silva ATACADAO SA. - @Transformação Digital - RH",
   "license": "MIT",
   "repository": {
     "url": "PedroHenc/eslint-config-pedro"
