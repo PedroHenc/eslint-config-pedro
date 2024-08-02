@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "configuração padrão para o eslint-prettier utilizada por @pedrohenC @usolivre",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Pedro Henrique @Transformação Digital - RH",
+    "author": "Pedro Henrique Castro da Silva ATACADAO SA. - @Transformação Digital - RH",
   "license": "MIT",
+  "repository": {
+    "url": "PedroHenc/eslint-config-pedro"
+  },
   "peerDependencies": {
     "eslint": "^8.0.0",
     "typescript": ">=5"
