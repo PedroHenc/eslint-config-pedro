@@ -87,6 +87,11 @@ export default [
           'newlines-between': 'always',
           pathGroups: [
             {
+              pattern: './assets/**',
+              group: 'internal',
+              position: 'before',
+            },
+            {
               pattern: '{**/*.css,**/*.scss}',
               group: 'object',
               position: 'before',
